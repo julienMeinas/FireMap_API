@@ -11,4 +11,15 @@ https://firemap-api-rest.herokuapp.com/fireworks/
 https://firemap-api-rest.herokuapp.com/fireworks/{id}
 
 
+POST :
+
+- post firework
+https://firemap-api-rest.herokuapp.com/fireworks/
+
+DELETE : 
+
+- delete firework with id
+https://firemap-api-rest.herokuapp.com/fireworks/{id}
+
+
 
