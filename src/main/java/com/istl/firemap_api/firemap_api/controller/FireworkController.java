@@ -1,7 +1,7 @@
-package com.istl.firemap_api.controller;
+package com.istl.firemap_api.firemap_api.controller;
 
-import com.istl.firemap_api.bo.Firework;
-import com.istl.firemap_api.repository.FireworkRepository;
+import com.istl.firemap_api.firemap_api.bo.Firework;
+import com.istl.firemap_api.firemap_api.repository.FireworkRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

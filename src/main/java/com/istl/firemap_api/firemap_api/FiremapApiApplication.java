@@ -1,4 +1,4 @@
-package com.istl.firemap_api;
+package com.istl.firemap_api.firemap_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

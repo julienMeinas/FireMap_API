@@ -1,4 +1,4 @@
-package com.istl.firemap_api.bo;
+package com.istl.firemap_api.firemap_api.bo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
