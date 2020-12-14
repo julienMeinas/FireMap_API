@@ -2,6 +2,7 @@ package com.istl.firemap_api.firemap_api.controller;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.repository.FireworkRepository;
+import com.istl.firemap_api.firemap_api.service.FireworkService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,40 +12,39 @@ import java.util.Optional;
 // end::hateoas-imports[]
 
 @RestController
-public class FireworkController {
+public class FireworkControllerImpl implements FireworkController{
+	private final FireworkService service;
 
-	private final FireworkRepository repository;
-
-	public FireworkController(FireworkRepository repository) {
-		this.repository = repository;
+	public FireworkControllerImpl(FireworkService service) {
+		this.service = service;
 	}
 
 	// Aggregate root
 
 	// tag::get-aggregate-root[]
 	@GetMapping("/fireworks")
-	public List<Firework> all() {
-		return this.repository.findAll();
+	public List<Firework> getFireworks() {
+		return this.service.getFireworks();
 	}
 	// end::get-aggregate-root[]
 
 	@PostMapping("/fireworks")
-	public Firework newEmployee(@RequestBody Firework firework) {
-		return repository.save(firework);
+	public Firework newFirework(@RequestBody Firework firework) {
+		return service.newFirework(firework);
 	}
 
 	// Single item
 
 	// tag::get-single-item[]
 	@GetMapping("/fireworks/{id}")
-	public Optional<Firework> one(@PathVariable Long id) {
-		return this.repository.findById(id);
+	public Optional<Firework> geFireworkById(@PathVariable Long id) {
+		return this.service.geFireworkById(id);
 	}
 	// end::get-single-item[]
 
 
 	@DeleteMapping("/fireworks/{id}")
-	public void deleteEmployee(@PathVariable Long id) {
-		repository.deleteById(id);
+	public void deleteFirework(@PathVariable Long id) {
+		service.deleteFirework(id);
 	}
 }
