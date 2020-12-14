@@ -28,6 +28,7 @@ class LoadDatabase {
 		Fireworker fireworker1 = new Fireworker("Benjamin", 4.0);
 		List<Parking> parkings1 = new ArrayList<>();
 		parkings1.add(new Parking("Parking de la foire de Lille", 11));
+		parkings1.add(new Parking("Parking centre de Lille", 15));
 
 		Fireworker fireworker2 = new Fireworker("Julien", 4.5);
 		List<Parking> parkings2 = new ArrayList<>();
