@@ -1,7 +1,6 @@
 package com.istl.firemap_api.firemap_api.service;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,4 +12,5 @@ public interface FireworkService {
     public Firework newFirework( Firework firework);
     public Optional<Firework> geFireworkById( Long id);
     public void deleteFirework( Long id);
+    public Optional<Firework> replaceFirework(Firework newFirework, Long id);
 }

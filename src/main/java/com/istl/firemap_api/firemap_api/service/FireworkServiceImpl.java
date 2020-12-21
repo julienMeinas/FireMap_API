@@ -35,4 +35,21 @@ public class FireworkServiceImpl implements FireworkService {
     public void deleteFirework(Long id) {
         this.fireworkRepository.deleteById(id);
     }
+
+    @Override
+    public Optional<Firework> replaceFirework(Firework newFirework, Long id) {
+        return this.fireworkRepository.findById(id)
+                .map(firework -> {
+                    firework.setLongitude(newFirework.getLongitude());
+                    firework.setLatitude(newFirework.getLatitude());
+                    firework.setAddress(newFirework.getAddress());
+                    firework.setDate(newFirework.getDate());
+                    firework.setPrice(newFirework.getPrice());
+                    firework.setHandicapAccess(newFirework.isHandicapAccess());
+                    firework.setDuration(newFirework.getDuration());
+                    firework.setFireworker(newFirework.getFireworker());
+                    firework.setParking(newFirework.getParking());
+                    return this.fireworkRepository.save(firework);
+                });
+    }
 }

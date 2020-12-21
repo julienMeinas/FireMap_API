@@ -1,7 +1,6 @@
 package com.istl.firemap_api.firemap_api.controller;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
-import com.istl.firemap_api.firemap_api.repository.FireworkRepository;
 import com.istl.firemap_api.firemap_api.service.FireworkService;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +32,6 @@ public class FireworkControllerImpl implements FireworkController{
 		return service.newFirework(firework);
 	}
 
-	// Single item
 
 	// tag::get-single-item[]
 	@GetMapping("/fireworks/{id}")
@@ -42,9 +40,13 @@ public class FireworkControllerImpl implements FireworkController{
 	}
 	// end::get-single-item[]
 
-
 	@DeleteMapping("/fireworks/{id}")
 	public void deleteFirework(@PathVariable Long id) {
 		service.deleteFirework(id);
+	}
+
+	@PutMapping("/fireworks/{id}")
+	public Optional<Firework> replaceFirework(@RequestBody Firework newFirework, @PathVariable Long id) {
+		return service.replaceFirework(newFirework, id);
 	}
 }
