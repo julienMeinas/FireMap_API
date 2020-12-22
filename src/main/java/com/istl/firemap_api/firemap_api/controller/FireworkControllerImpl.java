@@ -3,6 +3,7 @@ package com.istl.firemap_api.firemap_api.controller;
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.service.FireworkService;
 import org.springframework.web.bind.annotation.*;
+import javax.ws.rs.QueryParam;
 
 import java.util.List;
 import java.util.Optional;
@@ -46,7 +47,7 @@ public class FireworkControllerImpl implements FireworkController{
 	}
 
 	@PutMapping("/fireworks/{id}")
-	public Optional<Firework> replaceFirework(@RequestBody Firework newFirework, @PathVariable Long id) {
-		return service.replaceFirework(newFirework, id);
+	public Optional<Firework> replaceFirework(@PathVariable Long id, @QueryParam("price") int price, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("duration") int duration, @QueryParam("crowed") String crowed) {
+		return service.replaceFirework(id, price, accessHandicap, duration, crowed);
 	}
 }

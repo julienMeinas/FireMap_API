@@ -37,18 +37,13 @@ public class FireworkServiceImpl implements FireworkService {
     }
 
     @Override
-    public Optional<Firework> replaceFirework(Firework newFirework, Long id) {
+    public Optional<Firework> replaceFirework(Long id, int price, boolean accessHandicap, int duration, String crowed) {
         return this.fireworkRepository.findById(id)
                 .map(firework -> {
-                    firework.setLongitude(newFirework.getLongitude());
-                    firework.setLatitude(newFirework.getLatitude());
-                    firework.setAddress(newFirework.getAddress());
-                    firework.setDate(newFirework.getDate());
-                    firework.setPrice(newFirework.getPrice());
-                    firework.setHandicapAccess(newFirework.isHandicapAccess());
-                    firework.setDuration(newFirework.getDuration());
-                    firework.setFireworker(newFirework.getFireworker());
-                    firework.setParking(newFirework.getParking());
+                    firework.setPrice(price);
+                    firework.setHandicapAccess(accessHandicap);
+                    firework.setDuration(duration);
+                    firework.setCrowd(crowed);
                     return this.fireworkRepository.save(firework);
                 });
     }

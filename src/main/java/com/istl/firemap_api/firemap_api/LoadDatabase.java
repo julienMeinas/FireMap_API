@@ -38,6 +38,15 @@ class LoadDatabase {
 			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, 30, "High", fireworker, parkings)));
 			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, 20, "Low", fireworker1, parkings1)));
 			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, 45, "Medium", fireworker2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, 30, "High", fireworker, parkings)));
+			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, 20, "Low", fireworker1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, 45, "Medium", fireworker2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, 30, "High", fireworker, parkings)));
+			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, 20, "Low", fireworker1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, 45, "Medium", fireworker2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, 30, "High", fireworker, parkings)));
+			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, 20, "Low", fireworker1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, 45, "Medium", fireworker2, parkings2)));
 		};
 	}
 }
