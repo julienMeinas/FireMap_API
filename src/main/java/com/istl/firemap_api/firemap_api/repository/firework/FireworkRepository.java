@@ -1,4 +1,4 @@
-package com.istl.firemap_api.firemap_api.repository;
+package com.istl.firemap_api.firemap_api.repository.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import org.springframework.data.jpa.repository.JpaRepository;

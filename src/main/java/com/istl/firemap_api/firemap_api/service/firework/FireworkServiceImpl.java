@@ -1,7 +1,7 @@
-package com.istl.firemap_api.firemap_api.service;
+package com.istl.firemap_api.firemap_api.service.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
-import com.istl.firemap_api.firemap_api.repository.FireworkRepository;
+import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

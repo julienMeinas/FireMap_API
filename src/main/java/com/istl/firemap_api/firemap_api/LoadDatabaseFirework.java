@@ -3,7 +3,7 @@ package com.istl.firemap_api.firemap_api;
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.bo.Fireworker;
 import com.istl.firemap_api.firemap_api.bo.Parking;
-import com.istl.firemap_api.firemap_api.repository.FireworkRepository;
+import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -15,9 +15,9 @@ import java.util.Date;
 import java.util.List;
 
 @Configuration
-class LoadDatabase {
+class LoadDatabaseFirework {
 
-	private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
+	private static final Logger log = LoggerFactory.getLogger(LoadDatabaseFirework.class);
 
 	@Bean
 	CommandLineRunner initDatabase(FireworkRepository repository) {

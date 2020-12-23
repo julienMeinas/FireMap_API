@@ -1,16 +1,34 @@
 package com.istl.firemap_api.firemap_api.bo;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class FireworkerDetail {
-    private int id;
+    private @Id long id;
     private String name;
-    private float note;
+    private double note;
+    @ElementCollection
     private List<Avis> avis;
+    @ElementCollection
     private List<String> images;
     private String urlPage;
 
-    public int getId() {
+    public FireworkerDetail(long id, String name, double note, List<Avis> avis, List<String> images, String urlPage) {
+        this.id = id;
+        this.name = name;
+        this.note = note;
+        this.avis = avis;
+        this.images = images;
+        this.urlPage = urlPage;
+    }
+
+    public FireworkerDetail() {
+    }
+
+    public long getId() {
         return id;
     }
 
@@ -18,7 +36,7 @@ public class FireworkerDetail {
         return name;
     }
 
-    public float getNote() {
+    public double getNote() {
         return note;
     }
 
@@ -34,7 +52,7 @@ public class FireworkerDetail {
         return urlPage;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -42,7 +60,7 @@ public class FireworkerDetail {
         this.name = name;
     }
 
-    public void setNote(float note) {
+    public void setNote(double note) {
         this.note = note;
     }
 

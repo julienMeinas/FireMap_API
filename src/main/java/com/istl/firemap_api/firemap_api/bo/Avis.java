@@ -1,12 +1,23 @@
 package com.istl.firemap_api.firemap_api.bo;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Avis {
-    private float note;
+    private double note;
     private String title;
     private String comment;
 
+    public Avis(double note, String title, String comment) {
+        this.note = note;
+        this.title = title;
+        this.comment = comment;
+    }
 
-    public float getNote() {
+    public Avis() {
+    }
+
+    public double getNote() {
         return note;
     }
 
