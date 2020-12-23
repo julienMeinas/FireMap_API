@@ -47,4 +47,9 @@ public class FireworkServiceImpl implements FireworkService {
                     return this.fireworkRepository.save(firework);
                 });
     }
+
+    @Override
+    public List<Firework> findFireworkByFilter(double note) {
+        return this.fireworkRepository.findFireworkByFilter(note);
+    }
 }
