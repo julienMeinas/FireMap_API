@@ -47,7 +47,7 @@ public class FireworkControllerImpl implements FireworkController{
 	}
 
 	@PutMapping("/fireworks/{id}")
-	public Optional<Firework> replaceFirework(@PathVariable Long id, @QueryParam("price") int price, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("duration") int duration, @QueryParam("crowed") String crowed) {
+	public Optional<Firework> replaceFirework(@PathVariable Long id, @QueryParam("price") int price, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("duration") String duration, @QueryParam("crowed") String crowed) {
 		return service.replaceFirework(id, price, accessHandicap, duration, crowed);
 	}
 

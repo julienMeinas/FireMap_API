@@ -13,7 +13,7 @@ public class Firework {
     private Date date;
     private int price;
     private boolean handicapAccess;
-    private int duration;
+    private String duration;
     private String crowded;
     private @OneToOne(cascade = CascadeType.ALL) Fireworker fireworker;
     @ElementCollection
@@ -22,7 +22,7 @@ public class Firework {
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String address, Date date, int price, boolean handicapAccess, int duration, String crowded, Fireworker fireworker, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, Fireworker fireworker, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.address = address;
@@ -83,11 +83,11 @@ public class Firework {
         this.handicapAccess = handicAccess;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
 

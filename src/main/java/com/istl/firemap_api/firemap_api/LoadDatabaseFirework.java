@@ -59,15 +59,15 @@ class LoadDatabaseFirework {
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50));
 
 		return args -> {
-			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, 30, "High", fireworker, parkings)));
-			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, 20, "Low", fireworker1, parkings1)));
-			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, 45, "Medium", fireworker2, parkings2)));
-			log.info("Preloading " + repository.save(new Firework(170.0007, 40.0008, "Tourcoing centre", new Date(), 0, false, 10, "Low", fireworker3, parkings3)));
-			log.info("Preloading " + repository.save(new Firework(111.0007, 909.0008, "Mons", new Date(), 5, true, 15, "High", fireworker4, parkings4)));
-			log.info("Preloading " + repository.save(new Firework(10.0007, 40.008, "Marseille", new Date(), 0, false, 10, "High", fireworker5, parkings5)));
-			log.info("Preloading " + repository.save(new Firework(11.0007, 909.008, "Paris 7e", new Date(), 50, true, 60, "High", fireworker6, parkings6)));
-			log.info("Preloading " + repository.save(new Firework(10.0007, 40.008, "Roubaix", new Date(), 0, true, 10, "High", fireworker7, parkings7)));
-			log.info("Preloading " + repository.save(new Firework(11.0007, 909.008, "Antwerp sportpaleis", new Date(), 50, true, 60, "High", fireworker8, parkings8)));
+			log.info("Preloading " + repository.save(new Firework(1.0005, 8.0009, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworker, parkings)));
+			log.info("Preloading " + repository.save(new Firework(17.0007, 0.0008, "Foire de Lille", new Date(), 0, false, "Middle", "Low", fireworker1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(1.0007, 90.0008, "Antwerp centre", new Date(), 5, true, "Middle", "Medium", fireworker2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(170.0007, 40.0008, "Tourcoing centre", new Date(), 0, false, "Short", "Low", fireworker3, parkings3)));
+			log.info("Preloading " + repository.save(new Firework(111.0007, 909.0008, "Mons", new Date(), 5, true, "Short", "High", fireworker4, parkings4)));
+			log.info("Preloading " + repository.save(new Firework(10.0007, 40.008, "Marseille", new Date(), 0, false, "Short", "High", fireworker5, parkings5)));
+			log.info("Preloading " + repository.save(new Firework(11.0007, 909.008, "Paris 7e", new Date(), 50, true, "Long", "High", fireworker6, parkings6)));
+			log.info("Preloading " + repository.save(new Firework(10.0007, 40.008, "Roubaix", new Date(), 0, true, "Short", "High", fireworker7, parkings7)));
+			log.info("Preloading " + repository.save(new Firework(11.0007, 909.008, "Antwerp sportpaleis", new Date(), 50, true, "Long", "High", fireworker8, parkings8)));
 		};
 	}
 }
