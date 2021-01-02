@@ -34,11 +34,11 @@ class LoadDatabaseFirework {
 		List<Parking> parkings2 = new ArrayList<>();
 		parkings2.add(new Parking("Parking de Antwerp centre", 20));
 
-		Fireworker fireworker3 = new Fireworker("Nathalie", 0.5);
+		Fireworker fireworker3 = new Fireworker("Bob", 0.5);
 		List<Parking> parkings3 = new ArrayList<>();
 		parkings3.add(new Parking("Parking de Tourcoing centre", 20));
 
-		Fireworker fireworker4 = new Fireworker("Elodie", 5);
+		Fireworker fireworker4 = new Fireworker("Bob", 5);
 		List<Parking> parkings4 = new ArrayList<>();
 		parkings4.add(new Parking("Parking de Mons", 20));
 
