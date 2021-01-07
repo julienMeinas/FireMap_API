@@ -59,7 +59,7 @@ class LoadDatabaseFirework {
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50)); // 51.230842, 4.440106
 
 		return args -> {
-			log.info("Preloading " + repository.save(new Firework(50.637330, 3.171932, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworker, parkings)));
+			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworker, parkings)));
 			log.info("Preloading " + repository.save(new Firework(50.637137, 3.049432, "Foire de Lille", new Date(), 0, false, "Middle", "Low", fireworker1, parkings1)));
 			log.info("Preloading " + repository.save(new Firework(51.212833, 4.413210, "Antwerp centre", new Date(), 5, true, "Middle", "Medium", fireworker2, parkings2)));
 			log.info("Preloading " + repository.save(new Firework(50.723466, 3.160554, "Tourcoing centre", new Date(), 0, false, "Short", "Low", fireworker3, parkings3)));
