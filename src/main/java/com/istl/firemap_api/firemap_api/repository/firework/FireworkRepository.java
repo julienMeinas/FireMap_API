@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface FireworkRepository extends JpaRepository<Firework, Long> {
-    @Query("SELECT f FROM Firework f WHERE f.fireworker.note >:note and f.crowded = :crowed")
-    public List<Firework> findFireworkByFilter(double note, String crowed);
+    @Query("SELECT f FROM Firework f WHERE f.fireworker.note >:note and f.crowded = :crowed and f.handicapAccess = :accessHandicap")
+    public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap);
 }
