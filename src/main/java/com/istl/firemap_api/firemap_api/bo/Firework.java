@@ -15,7 +15,7 @@ public class Firework {
     private boolean handicapAccess;
     private String duration;
     private String crowded;
-    private @OneToOne(cascade = CascadeType.ALL) Fireworker fireworker;
+    private @ManyToOne(cascade = CascadeType.ALL) Fireworker fireworker;
     @ElementCollection
     private List<Parking> parking;
 
