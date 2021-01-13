@@ -66,7 +66,7 @@ class LoadDatabaseFirework {
 			log.info("Preloading " + repository.save(new Firework(3.118858, 50.645773, "Mons", new Date(), 5, true, "Short", "High", fireworker4, parkings4)));
 			log.info("Preloading " + repository.save(new Firework(5.372787, 43.295278, "Marseille", new Date(), 0, false, "Short", "High", fireworker5, parkings5)));
 			log.info("Preloading " + repository.save(new Firework(2.312310, 48.852617, "Paris 7e", new Date(), 50, true, "Long", "High", fireworker6, parkings6)));
-			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", new Date(), 0, true, "", "", fireworker7, parkings7)));
+			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", new Date(), 50000, true, "", "", fireworker7, parkings7)));
 			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp sportpaleis", new Date(), 50, true, "Long", "High", fireworker8, parkings8)));
 		};
 	}
