@@ -52,7 +52,7 @@ public class FireworkControllerImpl implements FireworkController{
 	}
 
 	@GetMapping("/fireworks/filter")
-	public List<Firework> findFireworkByFilter(@QueryParam("note") double note, @QueryParam("crowed") String crowed, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("price") int price) {
-		return this.service.findFireworkByFilter(note, crowed, accessHandicap, price);
+	public List<Firework> findFireworkByFilter(@QueryParam("note") double note, @QueryParam("crowed") String crowed, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("price") int price, @QueryParam("duration") String duration) {
+		return this.service.findFireworkByFilter(note, crowed, accessHandicap, price, duration);
 	}
 }
