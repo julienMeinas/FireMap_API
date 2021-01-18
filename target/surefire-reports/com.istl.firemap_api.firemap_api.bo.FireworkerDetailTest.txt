@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.istl.firemap_api.firemap_api.bo.FireworkerDetailTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.istl.firemap_api.firemap_api.bo.FireworkerDetailTest
