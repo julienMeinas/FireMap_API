@@ -1,8 +1,0 @@
-com\istl\firemap_api\firemap_api\repository\FireworkRepositoryTest.class
-com\istl\firemap_api\firemap_api\service\FireworkServiceTest.class
-com\istl\firemap_api\firemap_api\controller\FireworkControllerTest.class
-com\istl\firemap_api\firemap_api\bo\FireworkerDetailTest.class
-com\istl\firemap_api\firemap_api\bo\FireworkTest.class
-com\istl\firemap_api\firemap_api\FiremapApiApplicationTests.class
-com\istl\firemap_api\firemap_api\bo\AvisTest.class
-com\istl\firemap_api\firemap_api\bo\ParkingTest.class
