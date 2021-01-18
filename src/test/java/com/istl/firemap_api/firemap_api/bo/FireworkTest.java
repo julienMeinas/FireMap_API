@@ -14,12 +14,17 @@ public class FireworkTest {
     }
 
     @Test
-    void fireworkDetailId_shouldBeAnId() throws NoSuchFieldException {
+    void fireworkId_shouldBeAnId() throws NoSuchFieldException {
         assertNotNull(Firework.class.getDeclaredField("id").getAnnotation(Id.class));
     }
 
     @Test
-    void fireworkDetailId_shouldBeAnGeneratedValue() throws NoSuchFieldException {
+    void fireworkId_shouldBeAnGeneratedValue() throws NoSuchFieldException {
         assertNotNull(Firework.class.getDeclaredField("id").getAnnotation(GeneratedValue.class));
+    }
+
+    @Test
+    void fireworkParking_shouldBeAnElementCollection() throws NoSuchFieldException {
+        assertNotNull(Firework.class.getDeclaredField("parking").getAnnotation(ElementCollection.class));
     }
 }
