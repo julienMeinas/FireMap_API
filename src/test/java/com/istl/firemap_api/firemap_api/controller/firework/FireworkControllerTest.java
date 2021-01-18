@@ -1,4 +1,4 @@
-package com.istl.firemap_api.firemap_api.controller;
+package com.istl.firemap_api.firemap_api.controller.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.controller.firework.FireworkController;
