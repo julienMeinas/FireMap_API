@@ -34,7 +34,7 @@ public class FireworkRepositoryTest {
     @Test
     void testSave(){
         List<Parking> parkings = new ArrayList<>();
-        Fireworker fireworker = new Fireworker();
+        List<Fireworker> fireworker = new ArrayList<>();
         var firework = new Firework(0, 0, "test Success", new Date(), 0, true, "Long", "Low", fireworker, parkings);
         repository.save(firework);
 

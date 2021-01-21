@@ -1,14 +1,9 @@
 package com.istl.firemap_api.firemap_api.bo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+@Embeddable
 public class Fireworker {
-    @Id
-    @GeneratedValue
     private int id;
     private String name;
     private double note;
@@ -16,7 +11,8 @@ public class Fireworker {
     public Fireworker() {
     }
 
-    public Fireworker(String name, double note) {
+    public Fireworker(int id, String name, double note) {
+        this.id = id;
         this.name = name;
         this.note = note;
     }

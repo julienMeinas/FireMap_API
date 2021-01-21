@@ -15,14 +15,15 @@ public class Firework {
     private boolean handicapAccess;
     private String duration;
     private String crowded;
-    private @ManyToOne(cascade = CascadeType.ALL) Fireworker fireworker;
+    @ElementCollection
+    private List<Fireworker> fireworkers;
     @ElementCollection
     private List<Parking> parking;
 
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, Fireworker fireworker, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.address = address;
@@ -31,7 +32,7 @@ public class Firework {
         this.handicapAccess = handicapAccess;
         this.duration = duration;
         this.crowded = crowded;
-        this.fireworker = fireworker;
+        this.fireworkers = fireworkers;
         this.parking = parking;
     }
 
@@ -99,12 +100,12 @@ public class Firework {
         this.crowded = crowded;
     }
 
-    public Fireworker getFireworker() {
-        return fireworker;
+    public List<Fireworker> getFireworker() {
+        return fireworkers;
     }
 
-    public void setFireworker(Fireworker fireworker) {
-        this.fireworker = fireworker;
+    public void setFireworker(List<Fireworker> fireworkers) {
+        this.fireworkers = fireworkers;
     }
 
     public List<Parking> getParking() {

@@ -21,53 +21,62 @@ class LoadDatabaseFirework {
 
 	@Bean
 	CommandLineRunner initDatabase(FireworkRepository repository) {
-		Fireworker fireworker = new Fireworker("Bob", 4.4);
+		List<Fireworker> fireworkers = new ArrayList<>();
+		fireworkers.add(new Fireworker(1, "Bob", 4.4));
 		List<Parking> parkings = new ArrayList<>();
 		parkings.add(new Parking("Parking du lac du héron", 0));
 
-		Fireworker fireworker1 = new Fireworker("Benjamin", 4.0);
+		List<Fireworker> fireworkers1 = new ArrayList<>();
+		fireworkers1.add(new Fireworker(2, "Benjamin", 4.0));
 		List<Parking> parkings1 = new ArrayList<>();
 		parkings1.add(new Parking("Parking de la foire de Lille", 11));
 		parkings1.add(new Parking("Parking centre de Lille", 15));
 
-		Fireworker fireworker2 = new Fireworker("Julien", 4.5);
+		List<Fireworker> fireworkers2 = new ArrayList<>();
+		fireworkers2.add(new Fireworker(3, "Julien", 4.5));
 		List<Parking> parkings2 = new ArrayList<>();
 		parkings2.add(new Parking("Parking de Antwerp centre", 20));
 
-		Fireworker fireworker3 = new Fireworker("Bob", 0.5);
+		List<Fireworker> fireworkers3 = new ArrayList<>();
+		fireworkers3.add(new Fireworker(4, "Bob", 0.5));
 		List<Parking> parkings3 = new ArrayList<>();
 		parkings3.add(new Parking("Parking de Tourcoing centre", 20));
 
-		Fireworker fireworker4 = new Fireworker("Bob", 5);
+		List<Fireworker> fireworkers4 = new ArrayList<>();
+		fireworkers4.add(new Fireworker(5, "Bob", 5));
 		List<Parking> parkings4 = new ArrayList<>();
 		parkings4.add(new Parking("Parking de Mons", 20));
 
-		Fireworker fireworker5 = new Fireworker("Nathalie", 0.5);
+		List<Fireworker> fireworkers5 = new ArrayList<>();
+		fireworkers5.add(new Fireworker(6, "Nathalie", 0.5));
 		List<Parking> parkings5 = new ArrayList<>();
 		parkings5.add(new Parking("Parking de Marseille centre", 40));
 
-		Fireworker fireworker6 = new Fireworker("Elodie", 4.5);
+		List<Fireworker> fireworkers6 = new ArrayList<>();
+		fireworkers6.add(new Fireworker(7, "Elodie", 4.5));
 		List<Parking> parkings6 = new ArrayList<>();
 		parkings6.add(new Parking("Parking de Paris 7e", 50));
 
-		Fireworker fireworker7 = new Fireworker("François", 0.5);
+		List<Fireworker> fireworkers7 = new ArrayList<>();
+		fireworkers7.add(new Fireworker(8, "François", 0.5));
 		List<Parking> parkings7 = new ArrayList<>();
 		parkings7.add(new Parking("Parking Roubaix", 40));
 
-		Fireworker fireworker8 = new Fireworker("Laurent", 4.5);
+		List<Fireworker> fireworkers8 = new ArrayList<>();
+		fireworkers8.add(new Fireworker(9, "Laurent", 4.5));
 		List<Parking> parkings8 = new ArrayList<>();
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50)); //
 
 		return args -> {
-			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworker, parkings)));
-			log.info("Preloading " + repository.save(new Firework(3.049432, 50.637137, "Foire de Lille", new Date(), 0, false, "Middle", "Low", fireworker1, parkings1)));
-			log.info("Preloading " + repository.save(new Firework(4.413210, 51.212833, "Antwerp centre", new Date(), 5, true, "Middle", "Medium", fireworker2, parkings2)));
-			log.info("Preloading " + repository.save(new Firework(3.160554, 50.723466, "Tourcoing centre", new Date(), 0, false, "Short", "Low", fireworker3, parkings3)));
-			log.info("Preloading " + repository.save(new Firework(3.118858, 50.645773, "Mons", new Date(), 5, true, "Short", "High", fireworker4, parkings4)));
-			log.info("Preloading " + repository.save(new Firework(5.372787, 43.295278, "Marseille", new Date(), 0, false, "Short", "High", fireworker5, parkings5)));
-			log.info("Preloading " + repository.save(new Firework(2.312310, 48.852617, "Paris 7e", new Date(), 50, true, "Long", "High", fireworker6, parkings6)));
-			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", new Date(), 50000, true, "", "", fireworker7, parkings7)));
-			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp sportpaleis", new Date(), 50, true, "Long", "High", fireworker8, parkings8)));
+			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworkers, parkings)));
+			log.info("Preloading " + repository.save(new Firework(3.049432, 50.637137, "Foire de Lille", new Date(), 0, false, "Middle", "Low", fireworkers1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(4.413210, 51.212833, "Antwerp centre", new Date(), 5, true, "Middle", "Medium", fireworkers2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(3.160554, 50.723466, "Tourcoing centre", new Date(), 0, false, "Short", "Low", fireworkers3, parkings3)));
+			log.info("Preloading " + repository.save(new Firework(3.118858, 50.645773, "Mons", new Date(), 5, true, "Short", "High", fireworkers4, parkings4)));
+			log.info("Preloading " + repository.save(new Firework(5.372787, 43.295278, "Marseille", new Date(), 0, false, "Short", "High", fireworkers5, parkings5)));
+			log.info("Preloading " + repository.save(new Firework(2.312310, 48.852617, "Paris 7e", new Date(), 50, true, "Long", "High", fireworkers6, parkings6)));
+			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", new Date(), 50000, true, "", "", fireworkers7, parkings7)));
+			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp sportpaleis", new Date(), 50, true, "Long", "High", fireworkers8, parkings8)));
 		};
 	}
 }

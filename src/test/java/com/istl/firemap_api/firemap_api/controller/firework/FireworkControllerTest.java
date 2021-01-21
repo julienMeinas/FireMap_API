@@ -1,18 +1,111 @@
 package com.istl.firemap_api.firemap_api.controller.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
-import com.istl.firemap_api.firemap_api.controller.firework.FireworkController;
-import com.istl.firemap_api.firemap_api.controller.firework.FireworkControllerImpl;
 import com.istl.firemap_api.firemap_api.service.firework.FireworkService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
+import javax.ws.rs.QueryParam;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 public class FireworkControllerTest {
+
+    @Test
+    void fireworkController_shouldBeAnnotated(){
+        var controllerAnnotation =
+                FireworkControllerImpl.class.getAnnotation(RestController.class);
+        Assertions.assertNotNull(controllerAnnotation);
+    }
+
+    @Test
+    void getFireworks_shouldBeAnnotated() throws NoSuchMethodException {
+        var getFireworks =
+                FireworkControllerImpl.class.getDeclaredMethod("getFireworks");
+        var getMapping = getFireworks.getAnnotation(GetMapping.class);
+
+        Assertions.assertNotNull(getMapping);
+        Assertions.assertArrayEquals(new String[]{"/fireworks"}, getMapping.value());
+    }
+
+    @Test
+    void newFirework_shouldBeAnnotated() throws NoSuchMethodException {
+        var newFirework =
+                FireworkControllerImpl.class.getDeclaredMethod("newFirework", Firework.class);
+        var postMapping = newFirework.getAnnotation(PostMapping.class);
+
+        var pathVariableAnnotation = newFirework.getParameters()[0].getAnnotation(RequestBody.class);
+
+        Assertions.assertNotNull(postMapping);
+        Assertions.assertArrayEquals(new String[]{"/fireworks"}, postMapping.value());
+
+        Assertions.assertNotNull(pathVariableAnnotation);
+    }
+
+    @Test
+    void getFireworkById_shouldBeAnnotated() throws NoSuchMethodException {
+        var getFireworkById =
+                FireworkControllerImpl.class.getDeclaredMethod("geFireworkById", Long.class);
+        var getMapping = getFireworkById.getAnnotation(GetMapping.class);
+
+        var pathVariableAnnotation = getFireworkById.getParameters()[0].getAnnotation(PathVariable.class);
+
+        Assertions.assertNotNull(getMapping);
+        Assertions.assertArrayEquals(new String[]{"/fireworks/{id}"}, getMapping.value());
+
+        Assertions.assertNotNull(pathVariableAnnotation);
+    }
+
+    @Test
+    void findFireworkByFilter_shouldBeAnnotated() throws NoSuchMethodException {
+        var findFireworkByFilter =
+                FireworkControllerImpl.class.getDeclaredMethod("findFireworkByFilter", double.class, String.class, boolean.class, int.class, String.class);
+        var getMapping = findFireworkByFilter.getAnnotation(GetMapping.class);
+
+        var pathVariableAnnotation1 = findFireworkByFilter.getParameters()[0].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation2 = findFireworkByFilter.getParameters()[1].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation3 = findFireworkByFilter.getParameters()[2].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation4 = findFireworkByFilter.getParameters()[3].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation5 = findFireworkByFilter.getParameters()[4].getAnnotation(QueryParam.class);
+
+        Assertions.assertNotNull(getMapping);
+        Assertions.assertArrayEquals(new String[]{"/fireworks/filter"}, getMapping.value());
+
+        Assertions.assertNotNull(pathVariableAnnotation1);
+        Assertions.assertNotNull(pathVariableAnnotation2);
+        Assertions.assertNotNull(pathVariableAnnotation3);
+        Assertions.assertNotNull(pathVariableAnnotation4);
+        Assertions.assertNotNull(pathVariableAnnotation5);
+    }
+
+    @Test
+    void replaceFirework_shouldBeAnnotated() throws NoSuchMethodException {
+        var replaceFirework =
+                FireworkControllerImpl.class.getDeclaredMethod("replaceFirework", Long.class, int.class, boolean.class, String.class, String.class);
+        var putMapping = replaceFirework.getAnnotation(PutMapping.class);
+
+        var pathVariableAnnotation1 = replaceFirework.getParameters()[0].getAnnotation(PathVariable.class);
+        var pathVariableAnnotation2 = replaceFirework.getParameters()[1].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation3 = replaceFirework.getParameters()[2].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation4 = replaceFirework.getParameters()[3].getAnnotation(QueryParam.class);
+        var pathVariableAnnotation5 = replaceFirework.getParameters()[4].getAnnotation(QueryParam.class);
+
+        Assertions.assertNotNull(putMapping);
+        Assertions.assertArrayEquals(new String[]{"/fireworks/{id}"}, putMapping.value());
+
+        Assertions.assertNotNull(pathVariableAnnotation1);
+        Assertions.assertNotNull(pathVariableAnnotation2);
+        Assertions.assertNotNull(pathVariableAnnotation3);
+        Assertions.assertNotNull(pathVariableAnnotation4);
+        Assertions.assertNotNull(pathVariableAnnotation5);
+    }
+
+
+
     @Test
     void getFireworks_shouldCallTheService(){
         var service = Mockito.mock(FireworkService.class);
