@@ -1,6 +1,7 @@
 package com.istl.firemap_api.firemap_api.service.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
+import com.istl.firemap_api.firemap_api.bo.Parking;
 import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +45,15 @@ public class FireworkServiceImpl implements FireworkService {
                     firework.setHandicapAccess(accessHandicap);
                     firework.setDuration(duration);
                     firework.setCrowd(crowed);
+                    return this.fireworkRepository.save(firework);
+                });
+    }
+
+    @Override
+    public Optional<Firework> addParkingToFirework(Long id, String name,double price) {
+        return this.fireworkRepository.findById(id)
+                .map(firework -> {
+                    firework.getParking().add(new Parking(name,price));
                     return this.fireworkRepository.save(firework);
                 });
     }
