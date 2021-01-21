@@ -38,32 +38,32 @@ class LoadDatabaseFirework {
 		parkings2.add(new Parking("Parking de Antwerp centre", 20));
 
 		List<Fireworker> fireworkers3 = new ArrayList<>();
-		fireworkers3.add(new Fireworker(4, "Bob", 0.5));
+		fireworkers3.add(new Fireworker(1, "Bob", 4.4));
 		List<Parking> parkings3 = new ArrayList<>();
 		parkings3.add(new Parking("Parking de Tourcoing centre", 20));
 
 		List<Fireworker> fireworkers4 = new ArrayList<>();
-		fireworkers4.add(new Fireworker(5, "Bob", 5));
+		fireworkers4.add(new Fireworker(1, "Bob", 4.4));
 		List<Parking> parkings4 = new ArrayList<>();
 		parkings4.add(new Parking("Parking de Mons", 20));
 
 		List<Fireworker> fireworkers5 = new ArrayList<>();
-		fireworkers5.add(new Fireworker(6, "Nathalie", 0.5));
+		fireworkers5.add(new Fireworker(4, "Nathalie", 0.5));
 		List<Parking> parkings5 = new ArrayList<>();
 		parkings5.add(new Parking("Parking de Marseille centre", 40));
 
 		List<Fireworker> fireworkers6 = new ArrayList<>();
-		fireworkers6.add(new Fireworker(7, "Elodie", 4.5));
+		fireworkers6.add(new Fireworker(5, "Elodie", 4.5));
 		List<Parking> parkings6 = new ArrayList<>();
 		parkings6.add(new Parking("Parking de Paris 7e", 50));
 
 		List<Fireworker> fireworkers7 = new ArrayList<>();
-		fireworkers7.add(new Fireworker(8, "François", 0.5));
+		fireworkers7.add(new Fireworker(2, "Benjamin", 4.0));
 		List<Parking> parkings7 = new ArrayList<>();
 		parkings7.add(new Parking("Parking Roubaix", 40));
 
 		List<Fireworker> fireworkers8 = new ArrayList<>();
-		fireworkers8.add(new Fireworker(9, "Laurent", 4.5));
+		fireworkers8.add(new Fireworker(3, "Julien", 4.5));
 		List<Parking> parkings8 = new ArrayList<>();
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50)); //
 
