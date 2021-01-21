@@ -59,7 +59,7 @@ public class FireworkServiceImpl implements FireworkService {
     }
 
     @Override
-    public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, int price, String duration) {
+    public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, double price, String duration) {
         return this.fireworkRepository.findFireworkByFilter(note, crowed, accessHandicap, price, duration);
     }
 }

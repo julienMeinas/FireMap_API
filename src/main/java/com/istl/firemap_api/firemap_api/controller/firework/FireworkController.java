@@ -11,5 +11,5 @@ public interface FireworkController {
     public Optional<Firework> geFireworkById(Long id);
     public void deleteFirework(Long id);
     public Optional<Firework> replaceFirework(Long id, int price, boolean accessHandicap, String duration, String crowed);
-    public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, int price, String duration);
+    public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, double price, String duration);
 }
