@@ -10,9 +10,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 @Configuration
 class LoadDatabaseFirework {
@@ -20,7 +23,7 @@ class LoadDatabaseFirework {
 	private static final Logger log = LoggerFactory.getLogger(LoadDatabaseFirework.class);
 
 	@Bean
-	CommandLineRunner initDatabase(FireworkRepository repository) {
+	CommandLineRunner initDatabase(FireworkRepository repository) throws ParseException {
 		List<Fireworker> fireworkers = new ArrayList<>();
 		fireworkers.add(new Fireworker(1, "Bob", 4.4));
 		List<Parking> parkings = new ArrayList<>();
@@ -68,15 +71,15 @@ class LoadDatabaseFirework {
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50)); //
 
 		return args -> {
-			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Lac du héron", new Date(), 0, true, "Middle", "High", fireworkers, parkings)));
-			log.info("Preloading " + repository.save(new Firework(3.049432, 50.637137, "Foire de Lille", new Date(), 0, false, "Middle", "Low", fireworkers1, parkings1)));
-			log.info("Preloading " + repository.save(new Firework(4.413210, 51.212833, "Antwerp centre", new Date(), 5, true, "Middle", "Medium", fireworkers2, parkings2)));
-			log.info("Preloading " + repository.save(new Firework(3.160554, 50.723466, "Tourcoing centre", new Date(), 0, false, "Short", "Low", fireworkers3, parkings3)));
-			log.info("Preloading " + repository.save(new Firework(3.118858, 50.645773, "Mons", new Date(), 5, true, "Short", "High", fireworkers4, parkings4)));
-			log.info("Preloading " + repository.save(new Firework(5.372787, 43.295278, "Marseille", new Date(), 0, false, "Short", "High", fireworkers5, parkings5)));
-			log.info("Preloading " + repository.save(new Firework(2.312310, 48.852617, "Paris 7e", new Date(), 50, true, "Long", "High", fireworkers6, parkings6)));
-			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", new Date(), 50000, true, "", "", fireworkers7, parkings7)));
-			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp sportpaleis", new Date(), 50, true, "Long", "High", fireworkers8, parkings8)));
+			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Lac du héron", "14/07/2021", 0, true, "Middle", "High", fireworkers, parkings)));
+			log.info("Preloading " + repository.save(new Firework(3.049432, 50.637137, "Foire de Lille", "14/07/2021", 0, false, "Middle", "Low", fireworkers1, parkings1)));
+			log.info("Preloading " + repository.save(new Firework(4.413210, 51.212833, "Antwerp centre", "14/07/2021", 5, true, "Middle", "Medium", fireworkers2, parkings2)));
+			log.info("Preloading " + repository.save(new Firework(3.160554, 50.723466, "Tourcoing centre", "14/07/2021", 0, false, "Short", "Low", fireworkers3, parkings3)));
+			log.info("Preloading " + repository.save(new Firework(3.118858, 50.645773, "Mons", "14/07/2021", 5, true, "Short", "High", fireworkers4, parkings4)));
+			log.info("Preloading " + repository.save(new Firework(5.372787, 43.295278, "Marseille", "14/07/2021", 0, false, "Short", "High", fireworkers5, parkings5)));
+			log.info("Preloading " + repository.save(new Firework(2.312310, 48.852617, "Paris 7e", "14/07/2021", 50, true, "Long", "High", fireworkers6, parkings6)));
+			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", "14/07/2021", 50000, true, "", "", fireworkers7, parkings7)));
+			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp sportpaleis", "14/07/2021", 50, true, "Long", "High", fireworkers8, parkings8)));
 		};
 	}
 }
