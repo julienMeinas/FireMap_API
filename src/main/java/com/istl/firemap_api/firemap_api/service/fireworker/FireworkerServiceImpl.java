@@ -1,7 +1,9 @@
 package com.istl.firemap_api.firemap_api.service.fireworker;
 
+import com.istl.firemap_api.firemap_api.bo.Avis;
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.bo.FireworkerDetail;
+import com.istl.firemap_api.firemap_api.bo.Parking;
 import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import com.istl.firemap_api.firemap_api.repository.fireworker.FireworkerRepository;
 import com.istl.firemap_api.firemap_api.service.firework.FireworkService;
@@ -37,5 +39,14 @@ public class FireworkerServiceImpl implements FireworkerService {
     @Override
     public void deleteFireworker(Long id) {
         this.fireworkerRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<FireworkerDetail> addAvis(Long id, double note, String title, String comment) {
+        return this.fireworkerRepository.findById(id)
+                .map(fireworker -> {
+                    fireworker.getAvis().add(new Avis(note, title, comment));
+                    return this.fireworkerRepository.save(fireworker);
+                });
     }
 }

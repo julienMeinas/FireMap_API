@@ -43,6 +43,11 @@ public class FireworkerControllerImpl implements FireworkerController {
 	}
 	// end::get-single-item[]
 
+	@PutMapping("/fireworkers/addAvis/{id}")
+	public Optional<FireworkerDetail> addAvis(@PathVariable("id") Long id, @QueryParam("note") double note, @QueryParam("title") String title, @QueryParam("comment") String comment) {
+		return this.serviceFireworker.addAvis(id, note, title, comment);
+	}
+
 	@DeleteMapping("/fireworkers/{id}")
 	public void deleteFireworker(@PathVariable Long id) {
 		serviceFireworker.deleteFireworker(id);
