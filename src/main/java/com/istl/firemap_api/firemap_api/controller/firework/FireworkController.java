@@ -15,4 +15,5 @@ public interface FireworkController {
     public Optional<Firework> replaceFirework(Long id, int price, boolean accessHandicap, String duration, String crowed);
     public Optional<Firework> addParking(Long id, String name, double price);
     public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, double price, String duration);
+    public List<Firework> findFireworkByCity(String city);
 }

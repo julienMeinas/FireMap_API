@@ -9,6 +9,7 @@ public class Firework {
     private @Id @GeneratedValue(strategy= GenerationType.AUTO) long id;
     private double longitude;
     private double latitude;
+    private String city;
     private String address;
     private String date;
     private int price;
@@ -23,9 +24,10 @@ public class Firework {
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String address, String date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String city, String address, String date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
+        this.city = city;
         this.address = address;
         this.date = date;
         this.price = price;
@@ -59,6 +61,14 @@ public class Firework {
     public double getLatitude() {return this.latitude;}
 
     public void setLatitude(double latitude) {this.latitude = latitude;}
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getDate() {
         return date;

@@ -35,7 +35,7 @@ public class FireworkRepositoryTest {
     void testSave(){
         List<Parking> parkings = new ArrayList<>();
         List<Fireworker> fireworker = new ArrayList<>();
-        var firework = new Firework(0, 0, "test Success", "14/07/2021", 0, true, "Long", "Low", fireworker, parkings);
+        var firework = new Firework(0, 0, "city", "test Success", "14/07/2021", 0, true, "Long", "Low", fireworker, parkings);
         repository.save(firework);
 
         var saved = repository.findById(firework.getId()).orElse(null);

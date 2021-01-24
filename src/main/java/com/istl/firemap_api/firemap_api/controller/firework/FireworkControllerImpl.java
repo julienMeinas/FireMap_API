@@ -60,4 +60,9 @@ public class FireworkControllerImpl implements FireworkController{
 	public List<Firework> findFireworkByFilter(@QueryParam("note") double note, @QueryParam("crowed") String crowed, @QueryParam("accessHandicap") boolean accessHandicap, @QueryParam("price") double price, @QueryParam("duration") String duration) {
 		return this.service.findFireworkByFilter(note, crowed, accessHandicap, price, duration);
 	}
+
+	@GetMapping("/fireworks/filterByCity")
+	public List<Firework> findFireworkByCity(@QueryParam("city") String city) {
+		return this.service.findFireworkByCity(city);
+	}
 }
