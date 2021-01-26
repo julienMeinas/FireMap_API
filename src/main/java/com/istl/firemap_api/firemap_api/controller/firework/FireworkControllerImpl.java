@@ -20,7 +20,10 @@ public class FireworkControllerImpl implements FireworkController{
 		this.service = service;
 	}
 
-	// Aggregate root
+	@GetMapping("/fireworks")
+	public List<Firework> getAllFirework() {
+		return this.service.getAllFirework();
+	}
 
 
 	@PostMapping("/fireworks")
@@ -61,13 +64,13 @@ public class FireworkControllerImpl implements FireworkController{
 		return this.service.findFireworkByCity(city);
 	}
 
-	@GetMapping("/fireworks/future")
-	public List<Firework> getFireworkFuture() {
-		return this.service.getFireworkFuture();
+	@GetMapping("/fireworks/search/future")
+	public List<Firework> getFireworkFutureWithSearch(@QueryParam("city") String city) {
+		return this.service.getFireworkFutureWithSearch(city);
 	}
 
-	@GetMapping("/fireworks")
-	public List<Firework> getAllFirework() {
-		return this.service.getAllFirework();
+	@GetMapping("/fireworks/search")
+	public List<Firework> getAllFireworkWithSearch(@QueryParam("city") String city) {
+		return this.service.getAllFireworkWithSearch(city);
 	}
 }

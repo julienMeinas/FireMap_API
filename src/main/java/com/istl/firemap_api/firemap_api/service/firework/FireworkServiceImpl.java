@@ -17,6 +17,9 @@ public class FireworkServiceImpl implements FireworkService {
         this.fireworkRepository = fireworkRepository;
     }
 
+    public List<Firework> getAllFirework() {
+        return this.fireworkRepository.findAll();
+    }
 
     @Override
     public Firework newFirework(Firework firework) {
@@ -65,13 +68,13 @@ public class FireworkServiceImpl implements FireworkService {
     }
 
     @Override
-    public List<Firework> getFireworkFuture() {
-        return this.fireworkRepository.getFireworkFuture();
+    public List<Firework> getFireworkFutureWithSearch(String city) {
+        return this.fireworkRepository.getFireworkFutureWithSearch(city);
     }
 
     @Override
-    public List<Firework> getAllFirework() {
-        return this.fireworkRepository.getAllFirework();
+    public List<Firework> getAllFireworkWithSearch(String city) {
+        return this.fireworkRepository.getAllFireworkWithSearch(city);
     }
 
 }

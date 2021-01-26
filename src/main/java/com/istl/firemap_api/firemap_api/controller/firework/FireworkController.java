@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface FireworkController {
+    public List<Firework> getAllFirework();
     public Firework newFirework(Firework firework);
     public Optional<Firework> geFireworkById(Long id);
     public void deleteFirework(Long id);
@@ -16,6 +17,6 @@ public interface FireworkController {
     public Optional<Firework> addParking(Long id, String name, double price);
     public List<Firework> findFireworkByFilter(double note, String crowed, boolean accessHandicap, double price, String duration);
     public List<Firework> findFireworkByCity(String city);
-    public List<Firework> getFireworkFuture();
-    public List<Firework> getAllFirework();
+    public List<Firework> getFireworkFutureWithSearch(String city);
+    public List<Firework> getAllFireworkWithSearch(String city);
 }
