@@ -115,13 +115,13 @@ public class FireworkControllerTest {
         firework1.setAddress("gotham city");
         List<Firework> fireworkList1 = new ArrayList<>();
         fireworkList1.add(firework1);
-        Mockito.when(service.getFireworks()).thenReturn(fireworkList1);
+        Mockito.when(service.getAllFirework()).thenReturn(fireworkList1);
 
-        List<Firework> fireworkList2 = controller.getFireworks();
+        List<Firework> fireworkList2 = controller.getAllFirework();
         Firework firework2 = fireworkList2.get(0);
         Assertions.assertEquals("gotham city", firework2.getAddress());
 
-        Mockito.verify(service).getFireworks();
+        Mockito.verify(service).getAllFirework();
     }
 
     @Test

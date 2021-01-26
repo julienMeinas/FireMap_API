@@ -14,7 +14,7 @@ public class FireworkServiceTest {
         var fireworkRepo = mock(FireworkRepository.class);
         var fireworkService = new FireworkServiceImpl(fireworkRepo);
 
-        fireworkService.getFireworks();
+        fireworkService.getAllFirework();
 
         verify(fireworkRepo).findAll();
     }
