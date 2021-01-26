@@ -5,6 +5,7 @@ import com.istl.firemap_api.firemap_api.service.firework.FireworkService;
 import org.springframework.web.bind.annotation.*;
 import javax.ws.rs.QueryParam;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,13 +22,6 @@ public class FireworkControllerImpl implements FireworkController{
 
 	// Aggregate root
 
-	// tag::get-aggregate-root[]
-	@CrossOrigin
-	@GetMapping("/fireworks")
-	public List<Firework> getFireworks() {
-		return this.service.getFireworks();
-	}
-	// end::get-aggregate-root[]
 
 	@PostMapping("/fireworks")
 	public Firework newFirework(@RequestBody Firework firework) {
@@ -65,5 +59,15 @@ public class FireworkControllerImpl implements FireworkController{
 	@GetMapping("/fireworks/filterByCity")
 	public List<Firework> findFireworkByCity(@QueryParam("city") String city) {
 		return this.service.findFireworkByCity(city);
+	}
+
+	@GetMapping("/fireworks/future")
+	public List<Firework> getFireworkFuture() {
+		return this.service.getFireworkFuture();
+	}
+
+	@GetMapping("/fireworks")
+	public List<Firework> getAllFirework() {
+		return this.service.getAllFirework();
 	}
 }

@@ -11,7 +11,7 @@ public class Firework {
     private double latitude;
     private String city;
     private String address;
-    private String date;
+    private Date date;
     private int price;
     private boolean handicapAccess;
     private String duration;
@@ -24,7 +24,7 @@ public class Firework {
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String city, String address, String date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String city, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.city = city;
@@ -70,11 +70,11 @@ public class Firework {
         this.city = city;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

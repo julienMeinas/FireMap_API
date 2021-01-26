@@ -5,6 +5,7 @@ import com.istl.firemap_api.firemap_api.bo.Parking;
 import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,11 +17,6 @@ public class FireworkServiceImpl implements FireworkService {
         this.fireworkRepository = fireworkRepository;
     }
 
-
-    @Override
-    public List<Firework> getFireworks() {
-        return this.fireworkRepository.findAll();
-    }
 
     @Override
     public Firework newFirework(Firework firework) {
@@ -67,4 +63,15 @@ public class FireworkServiceImpl implements FireworkService {
     public List<Firework> findFireworkByCity(String city) {
         return this.fireworkRepository.findFireworkByCity(city);
     }
+
+    @Override
+    public List<Firework> getFireworkFuture() {
+        return this.fireworkRepository.getFireworkFuture();
+    }
+
+    @Override
+    public List<Firework> getAllFirework() {
+        return this.fireworkRepository.getAllFirework();
+    }
+
 }
