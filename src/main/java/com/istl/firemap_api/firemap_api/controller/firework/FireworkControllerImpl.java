@@ -22,6 +22,7 @@ public class FireworkControllerImpl implements FireworkController{
 	// Aggregate root
 
 	// tag::get-aggregate-root[]
+	@CrossOrigin
 	@GetMapping("/fireworks")
 	public List<Firework> getFireworks() {
 		return this.service.getFireworks();
