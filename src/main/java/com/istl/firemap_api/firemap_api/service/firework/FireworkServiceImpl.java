@@ -39,7 +39,7 @@ public class FireworkServiceImpl implements FireworkService {
     @Override
     public Optional<Firework> replaceFirework(Long id, int price, boolean accessHandicap, String duration, String crowed) {
         return this.fireworkRepository.findById(id)
-                .map(firework -> { 
+                .map(firework -> {  
                     firework.setPrice(price);
                     firework.setHandicapAccess(accessHandicap);
                     firework.setDuration(duration);
