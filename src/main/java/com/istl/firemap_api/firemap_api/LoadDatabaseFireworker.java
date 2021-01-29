@@ -42,6 +42,7 @@ class LoadDatabaseFireworker {
 		List<String> photos5 = new ArrayList<>();
 
 		return args -> {
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(0, "Aucuns Artificiers", 0, new ArrayList<>(), new ArrayList<>(), "")));
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(1, "Bob", 4.4, avis1, photos1, "url")));
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(2, "Benjamin", 4.0, avis1, photos1, "url")));
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(3, "Julien", 4.5, avis1, photos1, "url")));
