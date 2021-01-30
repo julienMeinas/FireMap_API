@@ -12,12 +12,13 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public void sendEmail(String body, String subject){
+    public String sendEmail(String body, String subject){
         SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
         simpleMailMessage.setFrom("firemapfr@gmail.com");
         simpleMailMessage.setTo("firemapfr@gmail.com");
         simpleMailMessage.setSubject("[FireMap]"+subject);
         simpleMailMessage.setText(body);
         javaMailSender.send(simpleMailMessage);
+        return "Sent";
     }
 }

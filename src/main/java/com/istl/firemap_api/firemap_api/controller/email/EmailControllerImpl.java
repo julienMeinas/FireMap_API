@@ -15,7 +15,7 @@ public class EmailControllerImpl  implements EmailController {
     }
 
     @PostMapping("/email")
-    public void sendEmail(@RequestParam String body, @RequestParam String subject) {
-        this.service.sendEmail(body,subject);
+    public String sendEmail(@RequestParam String body, @RequestParam String subject) {
+        return this.service.sendEmail(body,subject);
     }
 }
