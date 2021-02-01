@@ -42,10 +42,10 @@ public class FireworkerServiceImpl implements FireworkerService {
     }
 
     @Override
-    public Optional<FireworkerDetail> addAvis(Long id, double note, String title, String comment) {
+    public Optional<FireworkerDetail> addAvis(Long id, double note, String comment) {
         return this.fireworkerRepository.findById(id)
                 .map(fireworker -> {
-                    fireworker.getAvis().add(new Avis(note, title, comment));
+                    fireworker.getAvis().add(new Avis(note, comment));
                     return this.fireworkerRepository.save(fireworker);
                 });
     }

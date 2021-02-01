@@ -13,5 +13,5 @@ public interface FireworkerService {
     public FireworkerDetail newFireworker( FireworkerDetail fireworker);
     public Optional<FireworkerDetail> geFireworkerById( Long id);
     public void deleteFireworker( Long id);
-    public Optional<FireworkerDetail> addAvis(Long id, double note, String title, String comment);
+    public Optional<FireworkerDetail> addAvis(Long id, double note, String comment);
 }

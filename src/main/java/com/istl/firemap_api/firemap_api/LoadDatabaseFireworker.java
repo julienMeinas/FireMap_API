@@ -22,23 +22,23 @@ class LoadDatabaseFireworker {
 	@Bean
 	CommandLineRunner initDatabaseFireworker(FireworkerController controller) {
 		List<Avis> avis1 = new ArrayList<>();
-		avis1.add(new Avis(4.6, "Trop bien", "C'était parfait !"));
+		avis1.add(new Avis(4.6, "C'était parfait !"));
 		List<String> photos1 = new ArrayList<>();
 
 		List<Avis> avis2 = new ArrayList<>();
-		avis2.add(new Avis(4.6, "Trop bien", "C'était parfait !"));
+		avis2.add(new Avis(4.6, "C'était parfait !"));
 		List<String> photos2 = new ArrayList<>();
 
 		List<Avis> avis3 = new ArrayList<>();
-		avis3.add(new Avis(4.6, "Trop bien", "C'était parfait !"));
+		avis3.add(new Avis(4.6, "C'était parfait !"));
 		List<String> photos3 = new ArrayList<>();
 
 		List<Avis> avis4 = new ArrayList<>();
-		avis4.add(new Avis(4.6, "Trop bien", "C'était parfait !"));
+		avis4.add(new Avis(4.6, "C'était parfait !"));
 		List<String> photos4 = new ArrayList<>();
 
 		List<Avis> avis5 = new ArrayList<>();
-		avis5.add(new Avis(4.6, "Trop bien", "C'était parfait !"));
+		avis5.add(new Avis(4.6, "C'était parfait !"));
 		List<String> photos5 = new ArrayList<>();
 
 		return args -> {
