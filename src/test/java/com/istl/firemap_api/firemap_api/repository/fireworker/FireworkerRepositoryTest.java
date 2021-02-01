@@ -33,7 +33,7 @@ public class FireworkerRepositoryTest {
     @Test
     void testSave(){
         List<Avis> avis = new ArrayList<>();
-        var fireworker = new FireworkerDetail(0L, "Test Success", 4.6, avis, new ArrayList<String>(), "url");
+        var fireworker = new FireworkerDetail(0L, "Test Success", "", "", "", 4.6, avis, new ArrayList<String>(), "url");
         repository.save(fireworker);
 
         var saved = repository.findById(fireworker.getId()).orElse(null);

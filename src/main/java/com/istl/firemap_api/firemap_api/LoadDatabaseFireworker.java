@@ -42,12 +42,12 @@ class LoadDatabaseFireworker {
 		List<String> photos5 = new ArrayList<>();
 
 		return args -> {
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(0, "Aucuns Artificiers", 0, new ArrayList<>(), new ArrayList<>(), "")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(1, "Bob", 4.4, avis1, photos1, "url")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(2, "Benjamin", 4.0, avis1, photos1, "url")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(3, "Julien", 4.5, avis1, photos1, "url")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(4, "Nathalie", 0.5, avis1, photos1, "url")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(5, "Elodie", 4.5, avis1, photos1, "url")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(0, "Aucuns Artificiers", "", "", "", 0, new ArrayList<>(), new ArrayList<>(), "")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(1, "Régie Fête Pyrotechnie", "regiefete.pyrotechnie@wanadoo.fr", "16 Chemin de la Grosse Borne, 62440 Harne", "03 21 20 32 96", 5, avis1, photos1, "https://www.facebook.com/RegieFete")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(2, "Feu d'artifice Brézac artifice, artificier", "contact@brezac.com", "224A Route de la Mallevieille 24130 LE FLEIX France", "05 53 74 45 45", 4.0, avis1, photos1, "http://www.brezac-artifices.com/")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(3, "TOULOUSE ARTIFICES CREATIONS - TAC", "tac.capens@orange.fr", "ZAC de Serres - 15, rue des vieilles vignes - 31410 CAPENS", "05 61 90 34 15", 4.0, avis1, photos1, "http://feux-dartifice.com/")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(4, "Feu d'artifice Hubert Thézé Pyrotechnie : spectacle pyrotechnique et illuminations de rue", "contact@htp.bzh", "Z.A. La Lande Rose 8 rue Blaise Pascal - 35580 GUICHEN", "02 99 52 06 35", 4.0, avis1, photos1, "https://www.htp.bzh/")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(5, "Feu d'artifice Tourcoing, Wagnon artifices", "contact@wagnon-artifices.fr", "203 Rue de l’Alma 59100 Roubaix ", "03.20.70.74.75", 4.0, avis1, photos1, "https://www.wagnon-artifices.fr/")));
 		};
 	}
 }

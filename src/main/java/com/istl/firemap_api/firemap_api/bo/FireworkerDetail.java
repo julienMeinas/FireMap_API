@@ -9,6 +9,9 @@ import java.util.List;
 public class FireworkerDetail {
     private @Id long id;
     private String name;
+    private String mail;
+    private String address;
+    private String tel;
     private double note;
     @ElementCollection
     private List<Avis> avis;
@@ -16,9 +19,12 @@ public class FireworkerDetail {
     private List<String> images;
     private String urlPage;
 
-    public FireworkerDetail(long id, String name, double note, List<Avis> avis, List<String> images, String urlPage) {
+    public FireworkerDetail(long id, String name, String mail, String address, String tel, double note, List<Avis> avis, List<String> images, String urlPage) {
         this.id = id;
         this.name = name;
+        this.mail = mail;
+        this.address = address;
+        this.tel = tel;
         this.note = note;
         this.avis = avis;
         this.images = images;
@@ -52,6 +58,18 @@ public class FireworkerDetail {
         return urlPage;
     }
 
+    public String getMail() {
+        return mail;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
     public void setId(long id) {
         this.id = id;
     }
@@ -73,6 +91,22 @@ public class FireworkerDetail {
     }
 
     public void setUrlProfil(String urlPage) {
+        this.urlPage = urlPage;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public void setUrlPage(String urlPage) {
         this.urlPage = urlPage;
     }
 }
