@@ -46,6 +46,14 @@ public class FireworkerServiceImpl implements FireworkerService {
         return this.fireworkerRepository.findById(id)
                 .map(fireworker -> {
                     fireworker.getAvis().add(new Avis(note, comment));
+                    double noteMoyenne = 0;
+                    int cpt = 0;
+                    for(Avis a : fireworker.getAvis()){
+                        cpt += 1;
+                        noteMoyenne += a.getNote();
+                    }
+                    noteMoyenne = noteMoyenne / cpt;
+                    fireworker.setNote(noteMoyenne);
                     return this.fireworkerRepository.save(fireworker);
                 });
     }
