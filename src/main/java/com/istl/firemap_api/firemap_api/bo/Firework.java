@@ -16,15 +16,14 @@ public class Firework {
     private boolean handicapAccess;
     private String duration;
     private String crowded;
-    @ElementCollection
-    private List<Fireworker> fireworkers;
+    private int idFireworker;
     @ElementCollection
     private List<Parking> parking;
 
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String city, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, List<Fireworker> fireworkers, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String city, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, int idFireworker, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.city = city;
@@ -34,7 +33,7 @@ public class Firework {
         this.handicapAccess = handicapAccess;
         this.duration = duration;
         this.crowded = crowded;
-        this.fireworkers = fireworkers;
+        this.idFireworker = idFireworker;
         this.parking = parking;
     }
 
@@ -110,12 +109,12 @@ public class Firework {
         this.crowded = crowded;
     }
 
-    public List<Fireworker> getFireworker() {
-        return fireworkers;
+    public int getIdFireworker() {
+        return idFireworker;
     }
 
-    public void setFireworker(List<Fireworker> fireworkers) {
-        this.fireworkers = fireworkers;
+    public void setIdFireworker(int idFireworker) {
+        this.idFireworker = idFireworker;
     }
 
     public List<Parking> getParking() {
