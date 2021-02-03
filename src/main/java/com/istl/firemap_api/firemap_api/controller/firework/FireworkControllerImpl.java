@@ -80,6 +80,11 @@ public class FireworkControllerImpl implements FireworkController{
 		return this.service.addAvis(id, note, comment);
 	}
 
+	@GetMapping("/fireworkers/byCity/{id}")
+	public List<Firework> getAllFireworkOfFireworkerInCity(@PathVariable("id") int id, @QueryParam("city") String city) {
+		return this.service.getAllFireworkOfFireworkerInCity(id, city);
+	}
+
 	@GetMapping("/appVersion")
 	public String getAppVersion() {
 		return this.service.getAppVersion();
