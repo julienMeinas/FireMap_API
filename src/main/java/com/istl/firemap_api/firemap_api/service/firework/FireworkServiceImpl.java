@@ -101,16 +101,13 @@ public class FireworkServiceImpl implements FireworkService {
                 });
     }
 
-<<<<<<< HEAD
     public List<Firework> getAllFireworkOfFireworkerInCity(int id, String city) {
         return this.fireworkRepository.getAllFireworkOfFireworkerInCity(id, city);
     }
 
-=======
     @Value("${appVersion}")
     private String appVersion;
     public String getAppVersion(){
         return appVersion;
     }
->>>>>>> 3f886651cff4d6b28d30e96f303b7bfb9c33ac7f
 }
