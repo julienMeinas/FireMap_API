@@ -19,4 +19,5 @@ public interface FireworkController {
     public List<Firework> findFireworkByCity(String city);
     public List<Firework> getFireworkFutureWithSearch(String city);
     public List<Firework> getAllFireworkWithSearch(String city);
+    public Optional<Firework> addAvis(Long id, double note, String comment);
 }

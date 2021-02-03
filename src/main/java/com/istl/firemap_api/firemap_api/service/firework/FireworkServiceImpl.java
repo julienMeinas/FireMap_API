@@ -1,6 +1,8 @@
 package com.istl.firemap_api.firemap_api.service.firework;
 
+import com.istl.firemap_api.firemap_api.bo.Avis;
 import com.istl.firemap_api.firemap_api.bo.Firework;
+import com.istl.firemap_api.firemap_api.bo.FireworkerDetail;
 import com.istl.firemap_api.firemap_api.bo.Parking;
 import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
 import org.springframework.stereotype.Service;
@@ -75,6 +77,27 @@ public class FireworkServiceImpl implements FireworkService {
     @Override
     public List<Firework> getAllFireworkWithSearch(String city) {
         return this.fireworkRepository.getAllFireworkWithSearch(city);
+    }
+
+    @Override
+    public Optional<Firework> addAvis(Long id, double note, String comment) {
+        return this.fireworkRepository.findById(id)
+                .map(firework -> {
+                    firework.getAvis().add(new Avis(note, comment));
+                    if(firework.getNote() == -1) {
+                        firework.setNote(note);
+                    }else {
+                        double noteMoyenne = 0;
+                        int cpt = 0;
+                        for (Avis a : firework.getAvis()) {
+                            cpt += 1;
+                            noteMoyenne += a.getNote();
+                        }
+                        noteMoyenne = noteMoyenne / cpt;
+                        firework.setNote(noteMoyenne);
+                    }
+                    return this.fireworkRepository.save(firework);
+                });
     }
 
 }

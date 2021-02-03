@@ -1,6 +1,7 @@
 package com.istl.firemap_api.firemap_api.service.firework;
 
 import com.istl.firemap_api.firemap_api.bo.Firework;
+import com.istl.firemap_api.firemap_api.bo.FireworkerDetail;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -19,4 +20,5 @@ public interface FireworkService {
     public List<Firework> findFireworkByCity(String city);
     public List<Firework> getFireworkFutureWithSearch(String city);
     public List<Firework> getAllFireworkWithSearch(String city);
+    public Optional<Firework> addAvis(Long id, double note, String comment);
 }
