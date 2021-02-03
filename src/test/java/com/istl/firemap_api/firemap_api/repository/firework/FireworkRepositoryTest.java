@@ -1,5 +1,6 @@
 package com.istl.firemap_api.firemap_api.repository.firework;
 
+import com.istl.firemap_api.firemap_api.bo.Avis;
 import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.bo.Fireworker;
 import com.istl.firemap_api.firemap_api.bo.Parking;
@@ -35,7 +36,8 @@ public class FireworkRepositoryTest {
     void testSave(){
         List<Parking> parkings = new ArrayList<>();
         List<Fireworker> fireworker = new ArrayList<>();
-        var firework = new Firework(0, 0, "city", "test Success", new Date(), "",0, true, "Long", "Low", 1, parkings);
+        List<Avis> avis1 = new ArrayList<>();
+        var firework = new Firework(0, 0, "city", "test Success", new Date(), "",0, true, "Long", "Low", 1, parkings, avis1, 0);
         repository.save(firework);
 
         var saved = repository.findById(firework.getId()).orElse(null);

@@ -21,11 +21,14 @@ public class Firework {
     private int idFireworker;
     @ElementCollection
     private List<Parking> parking;
+    @ElementCollection
+    private List<Avis> avis;
+    private double note;
 
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String city, String address, Date date, String description, int price, boolean handicapAccess, String duration, String crowded, int idFireworker, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String city, String address, Date date, String description, int price, boolean handicapAccess, String duration, String crowded, int idFireworker, List<Parking> parking, List<Avis> avis, double note) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.city = city;
@@ -38,6 +41,8 @@ public class Firework {
         this.crowded = crowded;
         this.idFireworker = idFireworker;
         this.parking = parking;
+        this.avis = avis;
+        this.note = note;
     }
 
     public long getId() {
@@ -134,5 +139,21 @@ public class Firework {
 
     public void setParking(List<Parking> parking) {
         this.parking = parking;
+    }
+
+    public List<Avis> getAvis() {
+        return avis;
+    }
+
+    public void setAvis(List<Avis> avis) {
+        this.avis = avis;
+    }
+
+    public double getNote() {
+        return note;
+    }
+
+    public void setNote(double note) {
+        this.note = note;
     }
 }
