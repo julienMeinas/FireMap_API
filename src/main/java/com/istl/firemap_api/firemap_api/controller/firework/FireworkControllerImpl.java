@@ -79,4 +79,9 @@ public class FireworkControllerImpl implements FireworkController{
 	public Optional<Firework> addAvis(@PathVariable("id") Long id, @QueryParam("note") double note, @QueryParam("comment") String comment) {
 		return this.service.addAvis(id, note, comment);
 	}
+
+	@GetMapping("/fireworkers/byCity/{id}")
+	public List<Firework> getAllFireworkOfFireworkerInCity(@PathVariable("id") int id, @QueryParam("city") String city) {
+		return this.service.getAllFireworkOfFireworkerInCity(id, city);
+	}
 }

@@ -100,4 +100,8 @@ public class FireworkServiceImpl implements FireworkService {
                 });
     }
 
+    public List<Firework> getAllFireworkOfFireworkerInCity(int id, String city) {
+        return this.fireworkRepository.getAllFireworkOfFireworkerInCity(id, city);
+    }
+
 }

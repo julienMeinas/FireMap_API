@@ -20,5 +20,9 @@ public interface FireworkRepository extends JpaRepository<Firework, Long> {
 
     @Query("SELECT f FROM Firework f where UPPER(f.city) LIKE CONCAT('%', UPPER(:city), '%') ORDER BY f.date")
     public List<Firework> getAllFireworkWithSearch (String city);
+    
+
+    @Query("SELECT f FROM Firework f where UPPER(f.city) LIKE CONCAT('%', UPPER(:city), '%') AND f.idFireworker = :id ORDER BY f.date")
+    public List<Firework> getAllFireworkOfFireworkerInCity(int id, String city);
 
 }
