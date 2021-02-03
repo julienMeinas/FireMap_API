@@ -12,6 +12,8 @@ public class Firework {
     private String city;
     private String address;
     private Date date;
+    @Column(length=1024)
+    private String description;
     private int price;
     private boolean handicapAccess;
     private String duration;
@@ -23,12 +25,13 @@ public class Firework {
     public Firework() {
     }
 
-    public Firework(double longitude, double latitude, String city, String address, Date date, int price, boolean handicapAccess, String duration, String crowded, int idFireworker, List<Parking> parking) {
+    public Firework(double longitude, double latitude, String city, String address, Date date, String description, int price, boolean handicapAccess, String duration, String crowded, int idFireworker, List<Parking> parking) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.city = city;
         this.address = address;
         this.date = date;
+        this.description = description;
         this.price = price;
         this.handicapAccess = handicapAccess;
         this.duration = duration;
@@ -75,6 +78,14 @@ public class Firework {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getPrice() {
