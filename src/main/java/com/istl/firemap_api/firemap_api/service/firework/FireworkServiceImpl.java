@@ -5,6 +5,7 @@ import com.istl.firemap_api.firemap_api.bo.Firework;
 import com.istl.firemap_api.firemap_api.bo.FireworkerDetail;
 import com.istl.firemap_api.firemap_api.bo.Parking;
 import com.istl.firemap_api.firemap_api.repository.firework.FireworkRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -100,4 +101,9 @@ public class FireworkServiceImpl implements FireworkService {
                 });
     }
 
+    @Value("${appVersion}")
+    private String appVersion;
+    public String getAppVersion(){
+        return appVersion;
+    }
 }

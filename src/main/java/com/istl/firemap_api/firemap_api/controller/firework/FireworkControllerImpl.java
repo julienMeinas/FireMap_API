@@ -79,4 +79,9 @@ public class FireworkControllerImpl implements FireworkController{
 	public Optional<Firework> addAvis(@PathVariable("id") Long id, @QueryParam("note") double note, @QueryParam("comment") String comment) {
 		return this.service.addAvis(id, note, comment);
 	}
+
+	@GetMapping("/appVersion")
+	public String getAppVersion() {
+		return this.service.getAppVersion();
+	}
 }
