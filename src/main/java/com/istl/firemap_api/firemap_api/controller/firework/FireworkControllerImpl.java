@@ -73,7 +73,7 @@ public class FireworkControllerImpl implements FireworkController{
 	public List<Firework> getAllFireworkWithSearch(@QueryParam("city") String city) {
 		return this.service.getAllFireworkWithSearch(city);
 	}
-
+ 
 	@Override
 	@PutMapping("/fireworks/addAvis/{id}")
 	public Optional<Firework> addAvis(@PathVariable("id") Long id, @QueryParam("note") double note, @QueryParam("comment") String comment) {
