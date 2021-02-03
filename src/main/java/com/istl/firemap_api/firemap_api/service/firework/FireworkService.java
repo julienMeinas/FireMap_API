@@ -21,5 +21,9 @@ public interface FireworkService {
     public List<Firework> getFireworkFutureWithSearch(String city);
     public List<Firework> getAllFireworkWithSearch(String city);
     public Optional<Firework> addAvis(Long id, double note, String comment);
+<<<<<<< HEAD
     public List<Firework> getAllFireworkOfFireworkerInCity(int id, String city);
+=======
+    public String getAppVersion();
+>>>>>>> 3f886651cff4d6b28d30e96f303b7bfb9c33ac7f
 }
