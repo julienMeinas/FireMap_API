@@ -77,7 +77,10 @@ class LoadDatabaseFirework {
 		parkings8.add(new Parking("Parking sportpaleis Antwerp", 50)); //
 
 		return args -> {
-			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Villeneuve d'ascq","Lac du héron", date1, "test",0, true, "Middle", "High", 1, parkings)));
+			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Villeneuve d'ascq","Lac du héron", date1, "Il veut le mariage du siècle, des petits fours et un feu d'artifice. Elle, des hamburgers, de l'alcool, à la bonne franquette. Tout doit être parfait ! \n" +
+					"C'était sans compter l'organisatrice qui veut prendre la place du marié... \n" +
+					"Elle va tout faire pour les satisfaire. Enfin... la satisfaire ! \n" +
+					"Mais qui attrapera le bouquet ?",0, true, "Middle", "High", 1, parkings)));
 			log.info("Preloading " + repository.save(new Firework(3.049432, 50.637137, "Lille", "Foire de Lille", new Date(), "Venez admirer une ville transformée aux couleurs de l'amour, plus de 1 000 ballons en forme de cœur habillent le centre-ville. De nombreuses animations divertiront les amoureux !",0, false, "Middle", "Low", 2, parkings1)));
 			log.info("Preloading " + repository.save(new Firework(4.413210, 51.212833, "Antwerp", "Antwerp centre", new Date(), "Daniel découvre que sa femme n'est pas rentrée de la nuit pour la seconde fois... Dès lors qu'il soupçonne son épouse d'entretenir une liaison avec un autre homme, il envisage le divorce et finalement, la prie de s'en aller. Aussitôt Valentine, la première épouse de Daniel, accourt pour le reconquérir. L'intrigue se noue dans un chassé-croisé de malles pour se terminer dans un feu d'artifice de rebondissements !",5, true, "Middle", "Medium", 3, parkings2)));
 			log.info("Preloading " + repository.save(new Firework(3.160554, 50.723466, "Tourcoing", "Tourcoing centre", new Date(), "Dégustations, expositions, concerts et feux d'artifice composent le programme de cette grande fête. \n" +
