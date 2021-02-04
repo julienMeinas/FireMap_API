@@ -29,7 +29,7 @@ public class FireworkerServiceImpl implements FireworkerService {
     @Override
     public FireworkerDetail newFireworker(FireworkerDetail fireworker) {
         return this.fireworkerRepository.save(fireworker);
-    }
+    } 
 
     @Override
     public Optional<FireworkerDetail> geFireworkerById(Long id) {
