@@ -20,6 +20,7 @@ public class FireworkControllerImpl implements FireworkController{
 		this.service = service;
 	}
 
+	@CrossOrigin()
 	@GetMapping("/fireworks")
 	public List<Firework> getAllFirework() {
 		return this.service.getAllFirework();
