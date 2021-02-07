@@ -80,10 +80,19 @@ class LoadDatabaseFirework {
 		List<Avis> avis1 = new ArrayList<>();
 		avis1.add(new Avis(4.6, "C'était parfait !"));
 
-		Date date = new Date();
-		date.setDate(17);
-		date.setMonth(Calendar.JUNE);
-		date.setYear(121);
+		Date date4 = new Date();
+		date4.setDate(17);
+		date4.setMonth(5);
+		date4.setYear(121);
+		date4.setHours(22);
+		date4.setMinutes(0);
+
+		Date date5 = new Date();
+		date5.setDate(17);
+		date5.setMonth(5);
+		date5.setYear(120);
+		date5.setHours(22);
+		date5.setMinutes(0);
 
 		return args -> {
 			log.info("Preloading " + repository.save(new Firework(3.172488, 50.638002, "Villeneuve d'ascq","Lac du héron", date1, "Il veut le mariage du siècle, des petits fours et un feu d'artifice. Elle, des hamburgers, de l'alcool, à la bonne franquette. Tout doit être parfait ! \n" +
@@ -102,7 +111,11 @@ class LoadDatabaseFirework {
 			log.info("Preloading " + repository.save(new Firework(3.165441, 50.690766, "Roubaix", "Roubaix", new Date(), "Pour la fête Nationale, Quiers-sur-Bezonde organise de nombreuses animations dont \" Tous à vélo \" à 16h, suivi d'un repas et d'un feu d'artifice.",50000, true, "", "", 2, parkings7, avis1, 0)));
 			log.info("Preloading " + repository.save(new Firework(4.440106, 51.230842, "Antwerp", "Antwerp sportpaleis", new Date(), "Durant deux soirées consécutives en août, les jardins sont illuminés de 2 000 bougies. L'ouverture exceptionnelle en nocturne permet de parcourir les allées de Villandry à la tombée de la nuit et d'admirer les jardins magnifiés par une belle parure de lumière. Au moment où le soleil se couche, les lueurs des 2 000 bougies arrivent à leur apothéose. \n" +
 					"Cette soirée onirique s'achève sur un spectaculaire feu d'artifice qui se reflète sur le « miroir d'eau » à 23h00.",50, true, "Long", "High", 2, parkings8, avis1,4)));
-			log.info("Preloading " + repository.save(new Firework(-0.568739, 44.850875, "Bordeaux", "Quais de Bordeaux", date, "Dégustations, expositions, concerts et feux d'artifice composent le programme de cette grande fête. \n" +
+			log.info("Preloading " + repository.save(new Firework(-0.568739, 44.850875, "Bordeaux", "Quais de Bordeaux", date4, "Dégustations, expositions, concerts et feux d'artifice composent le programme de cette grande fête. \n" +
+					"\n" +
+					"Tous les amoureux du vin, de la gastronomie, de la fête et de la culture sont conviés à partager des moments de liesse et de festivité le long des quais de Garonne : un programme exceptionnel permettant à tous de découvrir la beauté architecturale de la ville, sa richesse culturelle, les vignobles qui l'entourent et les multiples atouts du terroir régional.",0, true, "Long", "High", 6, new ArrayList<>(), new ArrayList<>(),-1)));
+
+			log.info("Preloading " + repository.save(new Firework(-0.568739, 44.850875, "Bordeaux", "Quais de Bordeaux", date5, "Dégustations, expositions, concerts et feux d'artifice composent le programme de cette grande fête. \n" +
 					"\n" +
 					"Tous les amoureux du vin, de la gastronomie, de la fête et de la culture sont conviés à partager des moments de liesse et de festivité le long des quais de Garonne : un programme exceptionnel permettant à tous de découvrir la beauté architecturale de la ville, sa richesse culturelle, les vignobles qui l'entourent et les multiples atouts du terroir régional.",0, true, "Long", "High", 6, new ArrayList<>(), new ArrayList<>(),-1)));
 
