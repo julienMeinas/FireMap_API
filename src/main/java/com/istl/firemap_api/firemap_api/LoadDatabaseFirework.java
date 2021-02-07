@@ -82,16 +82,16 @@ class LoadDatabaseFirework {
 
 		Date date4 = new Date();
 		date4.setDate(17);
-		date4.setMonth(5);
+		date4.setMonth(Calendar.JUNE);
 		date4.setYear(121);
-		date4.setHours(22);
+		date4.setHours(20);
 		date4.setMinutes(0);
 
 		Date date5 = new Date();
 		date5.setDate(17);
-		date5.setMonth(5);
+		date5.setMonth(Calendar.JUNE);
 		date5.setYear(120);
-		date5.setHours(22);
+		date5.setHours(20);
 		date5.setMinutes(0);
 
 		return args -> {
