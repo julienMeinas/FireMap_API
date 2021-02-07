@@ -104,7 +104,7 @@ class LoadDatabaseFirework {
 					"Cette soirée onirique s'achève sur un spectaculaire feu d'artifice qui se reflète sur le « miroir d'eau » à 23h00.",50, true, "Long", "High", 2, parkings8, avis1,4)));
 			log.info("Preloading " + repository.save(new Firework(-0.568739, 44.850875, "Bordeaux", "Quais de Bordeaux", date, "Dégustations, expositions, concerts et feux d'artifice composent le programme de cette grande fête. \n" +
 					"\n" +
-					"Tous les amoureux du vin, de la gastronomie, de la fête et de la culture sont conviés à partager des moments de liesse et de festivité le long des quais de Garonne : un programme exceptionnel permettant à tous de découvrir la beauté architecturale de la ville, sa richesse culturelle, les vignobles qui l'entourent et les multiples atouts du terroir régional.",0, true, "Long", "High", 6, new ArrayList<>(), new ArrayList<>(),4)));
+					"Tous les amoureux du vin, de la gastronomie, de la fête et de la culture sont conviés à partager des moments de liesse et de festivité le long des quais de Garonne : un programme exceptionnel permettant à tous de découvrir la beauté architecturale de la ville, sa richesse culturelle, les vignobles qui l'entourent et les multiples atouts du terroir régional.",0, true, "Long", "High", 6, new ArrayList<>(), new ArrayList<>(),-1)));
 
 		};
 	}
