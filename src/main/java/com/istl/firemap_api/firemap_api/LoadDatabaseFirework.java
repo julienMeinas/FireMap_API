@@ -85,7 +85,7 @@ class LoadDatabaseFirework {
 		date4.setMonth(Calendar.JUNE);
 		date4.setYear(121);
 		date4.setHours(20);
-		date4.setMinutes(0);
+		date4.setMinutes(0); 
 
 		Date date5 = new Date();
 		date5.setDate(17);
