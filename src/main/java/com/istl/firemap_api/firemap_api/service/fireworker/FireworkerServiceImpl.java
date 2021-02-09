@@ -45,11 +45,11 @@ public class FireworkerServiceImpl implements FireworkerService {
     public Optional<FireworkerDetail> addAvis(Long id, double note, String comment) {
         return this.fireworkerRepository.findById(id)
                 .map(fireworker -> {
+                    fireworker.getAvis().add(new Avis(note, comment));
                     if(fireworker.getNote() == -1) {
                         fireworker.setNote(note);
                     }else {
 
-                        fireworker.getAvis().add(new Avis(note, comment));
                         double noteMoyenne = 0;
                         int cpt = 0;
                         for (Avis a : fireworker.getAvis()) {
