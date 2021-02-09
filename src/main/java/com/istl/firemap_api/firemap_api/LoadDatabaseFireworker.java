@@ -51,7 +51,7 @@ class LoadDatabaseFireworker {
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(3, "TOULOUSE ARTIFICES CREATIONS - TAC", "tac.capens@orange.fr", "ZAC de Serres - 15, rue des vieilles vignes - 31410 CAPENS", "05 61 90 34 15", 4.0, avis1, photos1, "http://feux-dartifice.com/")));
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(4, "Feu d'artifice Hubert Thézé Pyrotechnie : spectacle pyrotechnique et illuminations de rue", "contact@htp.bzh", "Z.A. La Lande Rose 8 rue Blaise Pascal - 35580 GUICHEN", "02 99 52 06 35", 4.0, avis1, photos1, "https://www.htp.bzh/")));
 			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(5, "Feu d'artifice Tourcoing, Wagnon artifices", "contact@wagnon-artifices.fr", "203 Rue de l’Alma 59100 Roubaix ", "03.20.70.74.75", 4.0, avis1, photos1, "https://www.wagnon-artifices.fr/")));
-			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(6, "Bordeaux Grands Evènements 12 cours du XXX juillet BORDEAUX", "Pas de mail indiqué", "Pas d'adresse indiquée", "05 56 00 66 00", -1, emptyAvis, photos1, "Pad d'URL indiquée")));
+			log.info("Preloading " + controller.newFireworker(new FireworkerDetail(6, "Bordeaux Grands Evènements 12 cours du XXX juillet BORDEAUX", "contact@wagnon-artifices.fr", "203 Rue de l’Alma 59100 Roubaix", "05 56 00 66 00", -1, emptyAvis, photos1, "https://www.wagnon-artifices.fr/")));
 		};
 	}
 }
