@@ -25,7 +25,7 @@ public class FireworkControllerTest {
     @Test
     void getFireworks_shouldBeAnnotated() throws NoSuchMethodException {
         var getFireworks =
-                FireworkControllerImpl.class.getDeclaredMethod("getFireworks");
+                FireworkControllerImpl.class.getDeclaredMethod("getAllFirework");
         var getMapping = getFireworks.getAnnotation(GetMapping.class);
 
         Assertions.assertNotNull(getMapping);
@@ -60,27 +60,7 @@ public class FireworkControllerTest {
         Assertions.assertNotNull(pathVariableAnnotation);
     }
 
-    @Test
-    void findFireworkByFilter_shouldBeAnnotated() throws NoSuchMethodException {
-        var findFireworkByFilter =
-                FireworkControllerImpl.class.getDeclaredMethod("findFireworkByFilter", double.class, String.class, boolean.class, int.class, String.class);
-        var getMapping = findFireworkByFilter.getAnnotation(GetMapping.class);
 
-        var pathVariableAnnotation1 = findFireworkByFilter.getParameters()[0].getAnnotation(QueryParam.class);
-        var pathVariableAnnotation2 = findFireworkByFilter.getParameters()[1].getAnnotation(QueryParam.class);
-        var pathVariableAnnotation3 = findFireworkByFilter.getParameters()[2].getAnnotation(QueryParam.class);
-        var pathVariableAnnotation4 = findFireworkByFilter.getParameters()[3].getAnnotation(QueryParam.class);
-        var pathVariableAnnotation5 = findFireworkByFilter.getParameters()[4].getAnnotation(QueryParam.class);
-
-        Assertions.assertNotNull(getMapping);
-        Assertions.assertArrayEquals(new String[]{"/fireworks/filter"}, getMapping.value());
-
-        Assertions.assertNotNull(pathVariableAnnotation1);
-        Assertions.assertNotNull(pathVariableAnnotation2);
-        Assertions.assertNotNull(pathVariableAnnotation3);
-        Assertions.assertNotNull(pathVariableAnnotation4);
-        Assertions.assertNotNull(pathVariableAnnotation5);
-    }
 
     @Test
     void replaceFirework_shouldBeAnnotated() throws NoSuchMethodException {
@@ -166,21 +146,4 @@ public class FireworkControllerTest {
         Mockito.verify(service).replaceFirework(null,0,false,null,null);
     }
 
-    @Test
-    void findFireworkByFilter_shouldCallTheService(){
-        var service = Mockito.mock(FireworkService.class);
-        var controller = new FireworkControllerImpl(service);
-
-        Firework firework1 = new Firework();
-        firework1.setAddress("gotham city");
-        List<Firework> fireworkList1 = new ArrayList<>();
-        fireworkList1.add(firework1);
-        //Mockito.when(service.findFireworkByFilter(0,null,false,0,null)).thenReturn(fireworkList1);
-
-        //List<Firework> fireworkList2 = controller.findFireworkByFilter(0,null,false,0,null);
-        //Firework firework2 = fireworkList2.get(0);
-        //Assertions.assertEquals("gotham city", firework2.getAddress());
-
-        //Mockito.verify(service).findFireworkByFilter(0,null,false,0,null);
-    }
 }

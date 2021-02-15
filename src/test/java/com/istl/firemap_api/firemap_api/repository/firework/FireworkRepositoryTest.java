@@ -35,7 +35,6 @@ public class FireworkRepositoryTest {
     @Test
     void testSave(){
         List<Parking> parkings = new ArrayList<>();
-        List<Fireworker> fireworker = new ArrayList<>();
         List<Avis> avis1 = new ArrayList<>();
         var firework = new Firework(0, 0, "city", "test Success", new Date(), "",0, true, "Long", "Low", 1, parkings, avis1, 0);
         repository.save(firework);
@@ -49,7 +48,6 @@ public class FireworkRepositoryTest {
     @Test
     void findFireworkByCityTest() {
         List<Parking> parkings = new ArrayList<>();
-        List<Fireworker> fireworker = new ArrayList<>();
         List<Avis> avis1 = new ArrayList<>();
         var firework = new Firework(0, 0, "city", "test Success", new Date(), "",0, true, "Long", "Low", 1, parkings, avis1, 0);
         repository.save(firework);
@@ -65,7 +63,6 @@ public class FireworkRepositoryTest {
     @Test
     void searchTest() {
         List<Parking> parkings = new ArrayList<>();
-        List<Fireworker> fireworker = new ArrayList<>();
         List<Avis> avis1 = new ArrayList<>();
         Date dateBefore = new Date();
         dateBefore.setYear(dateBefore.getYear()-1);
@@ -88,6 +85,21 @@ public class FireworkRepositoryTest {
         assertEquals(savedFireworkAfterInCity.size(), 1);
         assertEquals("test Success After", savedFireworkAfterInCity.get(0).getAddress());
 
+    }
+
+
+    @Test
+    void getAllFireworkOfFireworkerInCityTest() {
+        List<Parking> parkings = new ArrayList<>();
+        List<Avis> avis1 = new ArrayList<>();
+        var fireworkWithFireworker_1 = new Firework(0, 0, "city", "test Success", new Date(), "",0, true, "Long", "Low", -1, parkings, avis1, 3);
+        repository.save(fireworkWithFireworker_1);
+
+        var fireworkByFireworker = repository.getAllFireworkOfFireworkerInCity(-1, "city");
+
+        assertEquals(fireworkByFireworker.size(), 1);
+
+        assertEquals("test Success", fireworkByFireworker.get(0).getAddress());
     }
 
 
