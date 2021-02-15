@@ -71,10 +71,23 @@ public class FireworkRepositoryTest {
         dateBefore.setYear(dateBefore.getYear()-1);
         Date dateAfter = new Date();
         dateAfter.setYear(dateAfter.getYear()+1);
-        var fireworkAfter = new Firework(0, 0, "city", "test Success", dateAfter, "",0, true, "Long", "Low", 1, parkings, avis1, 0);
-        var fireworkBefore = new Firework(0, 0, "city", "test Success", dateBefore, "",0, true, "Long", "Low", 1, parkings, avis1, 0);
+        var fireworkAfter = new Firework(0, 0, "city", "test Success After", dateAfter, "",0, true, "Long", "Low", 1, parkings, avis1, 0);
+        var fireworkBeforeAndAfter = new Firework(0, 0, "city", "test Success Before", dateBefore, "",0, true, "Long", "Low", 1, parkings, avis1, 0);
         repository.save(fireworkAfter);
-        repository.save(fireworkBefore);
+        repository.save(fireworkBeforeAndAfter);
+
+
+        var savedFireworkBeforeAndAfterInCity = repository.getAllFireworkWithSearch("city");
+        var savedFireworkAfterInCity = repository.getFireworkFutureWithSearch("city");
+
+        assertEquals(savedFireworkBeforeAndAfterInCity.size(), 2);
+        assertEquals("test Success Before", savedFireworkBeforeAndAfterInCity.get(0).getAddress());
+        assertEquals("test Success After", savedFireworkBeforeAndAfterInCity.get(1).getAddress());
+
+
+        assertEquals(savedFireworkAfterInCity.size(), 1);
+        assertEquals("test Success After", savedFireworkAfterInCity.get(0).getAddress());
+
     }
 
 
